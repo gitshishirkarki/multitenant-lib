@@ -1,0 +1,35 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+plugins {
+	id 'org.springframework.boot' version '2.7.2' apply false
+	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+	id 'java-library'
+}
+
+group = 'com.facet.multitenancy'
+version = '1.0'
+
+java {
+	sourceCompatibility = '1.8'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencyManagement {
+	imports {
+		mavenBom SpringBootPlugin.BOM_COORDINATES
+	}
+}
+
+dependencies {
+	api 'org.springframework.boot:spring-boot-starter-web'
+	api 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'mysql:mysql-connector-java'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
