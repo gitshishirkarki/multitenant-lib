@@ -17,12 +17,11 @@ implementation file('multitenancy-1.0.jar')
 ### Step 4
 Run your Spring Boot application. Your application.properties looks like this without database name mentioned.
 ```
-spring.datasource.url=jdbc:mysql://localhost:3306
-spring.datasource.username=root
-spring.datasource.password=password
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+DATASOURCE_SERVER=localhost
+#not required if the port is 3306
+DATASOURCE_PORT=3306
+DATASOURCE_USERNAME=root
+DATASOURCE_PASSWORD=Shishir@123
 ```
 
 ### Step 5
